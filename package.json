@@ -6,9 +6,12 @@
   "scripts": {
     "build:client": "npx parcel build src/client/index.html",
     "build:server": "npx tsc",
-    "build": "npm run build:server && npm run build:client",
+    "build": "npm run build:server & npm run build:client",
     "start": "node build/server/server.js",
-    "dev": "npm run build && npm run start"
+    "start:server": "npm run build:server && npm run start",
+    "dev:server": "npx onchange -i -k \"src/server/**\" \"src/shared/**\" -- npm run start:server",
+    "dev:client": "npx onchange -i -k \"src/client/**\" \"src/shared/**\" -- npm run build:client",
+    "dev": "npx concurrently \"npm run dev:server\" \"npm run dev:client\""
   },
   "targets": {
     "default": {

@@ -12,7 +12,7 @@ app.use(staticMiddleware)
 
 const server = new http.Server(app)
 server.listen(3000,() => {
-  console.log('Listening...')
+  console.log('Listening....')
 })
 
 
