@@ -1,3 +1,3 @@
-import { version } from '../shared/constants'  
+import { version } from '../shared/constants'
 
-console.log('version', version)   
+console.log('version', version)
